@@ -1,0 +1,19 @@
+.country-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.visited{
+    background-color: antiquewhite;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .country-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+  }
+  
