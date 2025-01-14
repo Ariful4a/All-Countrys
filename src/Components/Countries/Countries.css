@@ -9,6 +9,9 @@
     color: black;
 }
 
+.flag-container img{
+    width: 100px;
+}
 @media (max-width: 768px) {
     .country-container{
         display: grid;

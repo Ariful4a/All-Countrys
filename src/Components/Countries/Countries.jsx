@@ -7,6 +7,7 @@ const Countries = () => {
 
     const [countries, setCountries] = useState([]);
     const [visitedCountrys, setVisitedCountrys] = useState([]);
+    const [countrysFlags, setcountrysFlags] = useState([]);
 
 
     useEffect(()=>{
@@ -21,6 +22,13 @@ const Countries = () => {
         setVisitedCountrys(newVisitedCountrys);
     }
 
+    const handleCountryFlag = flag => {
+        const newVisitedFlag = [...countrysFlags, flag];
+        setcountrysFlags(newVisitedFlag);
+    }
+
+    // remove item from an array in a state
+
     return (
         <div>
             <p>Countries{countries.length}</p>
@@ -32,9 +40,17 @@ const Countries = () => {
                     }
                 </ul>
             </div>
+
+            <div className="flag-container">
+                {
+                    countrysFlags.map((flag, idx) => <img key={idx} src={flag}></img>)
+                }
+            </div>
+
+            {/* display countrys  */}
            <div className="country-container">
            {
-                countries.map(country => <Country key={country.ccn3} handleVisitedCountry={handleVisitedCountry} country={country}></Country>)
+                countries.map(country => <Country key={country.ccn3} handleVisitedCountry={handleVisitedCountry} handleCountryFlag={handleCountryFlag} country={country}></Country>)
             }
            </div>
         </div>
